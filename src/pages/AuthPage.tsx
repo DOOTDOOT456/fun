@@ -101,6 +101,18 @@ export function AuthPage() {
           </p>
         </div>
 
+        <div className="mt-8 rounded-2xl border border-border/60 bg-card/40 p-5 text-sm text-muted-foreground">
+          <p className="font-medium text-foreground/80">Setup quick-start</p>
+          <ul className="mt-2 space-y-1.5 list-inside list-disc">
+            <li>Install deps with <code className="text-foreground">bun install</code></li>
+            <li>Start with <code className="text-foreground">bun run dev</code></li>
+            <li>Sign in via GitHub (Convex Auth), then set the OAuth keys in Settings → Environment</li>
+          </ul>
+          <p className="mt-2 text-xs text-muted-foreground/70">
+            Full details in the <a className="font-medium text-primary underline-offset-2 hover:underline" href="#readme">README</a>.
+          </p>
+        </div>
+
         <p className="mt-8 text-center text-sm text-muted-foreground">
           Already signed in?{" "}
           <Link

@@ -78,6 +78,43 @@ export function LandingPage() {
           />
         </div>
 
+        {/* Setup guide */}
+        <div className="mt-20 border-t border-border/60 pt-10">
+          <div className="mx-auto max-w-3xl">
+            <div className="mb-5 flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8 11V7a4 4 0 1 1 8 0v4M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2Z" />
+                </svg>
+              </div>
+              <h2 className="text-xl font-semibold">Setup guide</h2>
+            </div>
+            <p className="text-muted-foreground">
+              This repo wires together GitHub OAuth, Convex (database + realtime),
+              a 3D FPS, and GitHub Pages hosting. Follow the steps below to run it
+              locally, then deploy it.
+            </p>
+            <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
+              {[
+                "1. Install dependencies — <code>bun install</code>",
+                "2. Start Vite — <code>bun run dev</code> (port from the preview)",
+                "3. Sign in with GitHub via Convex Auth",
+                "4. Configure the GitHub OAuth App and <code>VITE_CONVEX_URL</code>",
+                "5. Deploy to GitHub Pages with <code>bun run build</code>",
+              ].map((line) => (
+                <li key={line} className="flex gap-3">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-none rounded-full bg-primary" />
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-xs text-muted-foreground/70">
+              Full details (auth setup, env vars, the multiplayer data model, and
+              the 3D render loop) are in <a className="font-medium text-primary underline-offset-2 hover:underline" href="#readme">README.md</a>.
+            </p>
+          </div>
+        </div>
+
         {/* Stack line */}
         <div className="mt-20 border-t border-border/60 pt-10 text-center text-sm text-muted-foreground">
           <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
